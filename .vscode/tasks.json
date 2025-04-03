@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build C program",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "if (!(Test-Path 'build/Debug')) { New-Item -ItemType Directory -Path 'build/Debug' } ; gcc -g main.c -o build/Debug/outDebug.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
